@@ -16,6 +16,12 @@
 </head>
 <body>
 <style>
+/* Pin the app shell to the actual webview edges; iOS can under-report 100dvh. */
+#root > .fixed.top-0.left-0.right-0 {
+  bottom: 0;
+  height: auto !important;
+}
+
 /* Cap over-reported iOS safe-area padding on the bottom navigation. */
 #root > .fixed.flex.flex-col > .shrink-0:last-child {
   padding-bottom: min(env(safe-area-inset-bottom, 0px), 34px) !important;
